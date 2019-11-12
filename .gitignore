@@ -1,3 +1,6 @@
+# Secrets
+.env
+
 .DS_Store
 
 # Created by `npm run build` in the UI side
