@@ -5,3 +5,6 @@
 
 # Created by `npm run build` in the UI side
 static/
+
+# Created by `make` for package distribution
+bin/

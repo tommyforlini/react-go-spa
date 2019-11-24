@@ -67,10 +67,12 @@ func init() {
 	// 	encryptionKeyOne,
 	// )
 
-	// Set http session for 30mins
+	// Set http session until browser closes OR for 30mins
 	// FIXME: Should come from os.getenv()
 	store.Options = &sessions.Options{
-		MaxAge:   60 * 30,
+		MaxAge: 0,
+		// MaxAge:   60 * 30,
+		Path:     "/",
 		HttpOnly: true,
 	}
 
@@ -107,7 +109,7 @@ func main() {
 	srv := &http.Server{
 		// Handler:      handlers.CORS(originsOk, headersOk, methodsOk)(router),
 		Handler:      router,
-		Addr:         "127.0.0.1:" + port,
+		Addr:         ":" + port,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
